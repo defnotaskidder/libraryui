@@ -1,87 +1,87 @@
 --[[
     ╔═══════════════════════════════════════════════════════════════╗
-    ║                    MacLib - Wizard Edition                     ║
+    ║              MacLib - Purple & Black Glowing Edition           ║
     ║                                                               ║
-    ║  ✨ Enchanted UI Library with Arcane Aesthetics ✨            ║
+    ║  ✨ Mystical Purple & Black UI Library ✨                     ║
     ║                                                               ║
-    ║  • Midnight Sapphire color palette                            ║
-    ║  • Mystical blue & violet accents                             ║
-    ║  • Luminous glows and ethereal shadows                        ║
-    ║  • Smooth magical animations                                  ║
-    ║  • Modern wizard-themed interface                             ║
+    ║  • Deep black backgrounds with purple accents                  ║
+    ║  • Vibrant purple glowing effects                              ║
+    ║  • Neon-style borders and highlights                           ║
+    ║  • Smooth magical animations                                   ║
+    ║  • Modern dark theme with maximum contrast                     ║
     ║                                                               ║
     ║  All original functionality preserved - 5,973 lines intact    ║
     ╚═══════════════════════════════════════════════════════════════╝
 --]]
 
---[[ WIZARD THEME CONFIGURATION ]]--
+--[[ PURPLE & BLACK THEME WITH GLOW ]]--
 local WizardTheme = {
-    -- Midnight Sapphire Palette
+    -- Deep Black Palette
     Background = {
-        Deep = Color3.fromRGB(8, 10, 20),           -- Deepest midnight
-        Base = Color3.fromRGB(12, 14, 24),          -- Main background
-        Panel = Color3.fromRGB(20, 24, 36),         -- Raised panels
-        Surface = Color3.fromRGB(25, 29, 41),       -- UI surfaces
-        Elevated = Color3.fromRGB(30, 34, 46),      -- Hover/elevated
+        Deep = Color3.fromRGB(0, 0, 0),             -- Pure black
+        Base = Color3.fromRGB(5, 5, 10),            -- Near-black
+        Panel = Color3.fromRGB(10, 5, 20),          -- Dark purple-black
+        Surface = Color3.fromRGB(15, 10, 30),       -- Surface purple-black
+        Elevated = Color3.fromRGB(20, 15, 40),      -- Elevated purple-black
     },
     
-    -- Mystical Accents
+    -- Vibrant Purple Accents
     Accent = {
-        Primary = Color3.fromRGB(54, 125, 255),     -- Spectral blue
-        Secondary = Color3.fromRGB(142, 101, 255),  -- Arcane violet
-        Glow = Color3.fromRGB(136, 197, 255),       -- Luminous glow
-        Active = Color3.fromRGB(74, 145, 255),      -- Active state
+        Primary = Color3.fromRGB(200, 50, 255),     -- Bright purple
+        Secondary = Color3.fromRGB(150, 30, 255),   -- Deep magenta
+        Glow = Color3.fromRGB(230, 100, 255),       -- Neon purple
+        Active = Color3.fromRGB(220, 70, 255),      -- Active purple
     },
     
     -- UI Elements
     Element = {
-        Toggle = Color3.fromRGB(54, 125, 255),      -- Toggle blue
-        Slider = Color3.fromRGB(54, 125, 255),      -- Slider blue
-        Button = Color3.fromRGB(35, 39, 51),        -- Button background
-        ButtonHover = Color3.fromRGB(45, 49, 61),   -- Button hover
-        Dropdown = Color3.fromRGB(25, 29, 41),      -- Dropdown bg
+        Toggle = Color3.fromRGB(200, 50, 255),      -- Toggle purple
+        Slider = Color3.fromRGB(200, 50, 255),      -- Slider purple
+        Button = Color3.fromRGB(20, 10, 40),        -- Button background
+        ButtonHover = Color3.fromRGB(30, 15, 50),   -- Button hover
+        Dropdown = Color3.fromRGB(15, 10, 30),      -- Dropdown bg
     },
     
     -- Text & Borders
     Text = {
         Primary = Color3.fromRGB(255, 255, 255),    -- White text
-        Secondary = Color3.fromRGB(200, 210, 225),  -- Light gray
-        Muted = Color3.fromRGB(150, 160, 175),      -- Muted text
-        Disabled = Color3.fromRGB(100, 110, 125),   -- Disabled text
+        Secondary = Color3.fromRGB(200, 200, 200),  -- Light gray
+        Muted = Color3.fromRGB(150, 150, 150),      -- Muted text
+        Disabled = Color3.fromRGB(100, 100, 100),   -- Disabled text
     },
     
     Border = {
-        Subtle = Color3.fromRGB(40, 45, 60),        -- Subtle borders
-        Accent = Color3.fromRGB(54, 125, 255),      -- Accent borders
-        Glow = Color3.fromRGB(136, 197, 255),       -- Glowing borders
+        Subtle = Color3.fromRGB(50, 20, 100),       -- Subtle purple
+        Accent = Color3.fromRGB(200, 50, 255),      -- Purple accents
+        Glow = Color3.fromRGB(230, 100, 255),       -- Neon purple glow
     },
     
-    -- Window Controls (macOS-inspired but wizard-themed)
+    -- Window Controls
     WindowControl = {
-        Close = Color3.fromRGB(235, 87, 87),        -- Red close
-        Minimize = Color3.fromRGB(245, 191, 79),    -- Yellow minimize  
-        Maximize = Color3.fromRGB(98, 197, 85),     -- Green maximize
+        Close = Color3.fromRGB(255, 80, 120),       -- Pink close
+        Minimize = Color3.fromRGB(255, 200, 100),   -- Orange minimize
+        Maximize = Color3.fromRGB(100, 255, 150),   -- Green maximize
     },
 }
 
---[[ WIZARD GLOW EFFECTS ]]--
-local function AddWizardGlow(instance, intensity)
-    intensity = intensity or 0.5
+--[[ GLOWING EFFECTS ]]--
+local function AddPurpleGlow(instance, intensity)
+    intensity = intensity or 0.7
     local glow = Instance.new("UIStroke")
-    glow.Name = "WizardGlow"
+    glow.Name = "PurpleGlow"
     glow.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    glow.Color = Color3.fromRGB(54, 125, 255)
-    glow.Thickness = 1.5
+    glow.Color = Color3.fromRGB(200, 50, 255)
+    glow.Thickness = 2
     glow.Transparency = 1 - intensity
     glow.Parent = instance
     return glow
 end
 
-local function CreateMagicalGradient(colors)
+local function CreateNeonGradient(colors)
     local gradient = Instance.new("UIGradient")
     gradient.Color = ColorSequence.new(colors or {
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(54, 125, 255)),
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(142, 101, 255))
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(200, 50, 255)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(150, 30, 255))
     })
     return gradient
 end
@@ -195,7 +195,7 @@ function MacLib:Window(Settings)
 	local base = Instance.new("Frame")
 	base.Name = "Base"
 	base.AnchorPoint = Vector2.new(0.5, 0.5)
-	base.BackgroundColor3 = Color3.fromRGB(12, 14, 24)
+	base.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
 	base.BackgroundTransparency = Settings.AcrylicBlur and 0.05 or 0
 	base.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	base.BorderSizePixel = 0
@@ -482,7 +482,7 @@ function MacLib:Window(Settings)
 		Enum.FontStyle.Normal
 	)
 	title.Text = Settings.Title
-	title.TextColor3 = Color3.fromRGB(54, 125, 255)
+	title.TextColor3 = Color3.fromRGB(200, 50, 255)
 	title.RichText = true
 	title.TextSize = 19
 	title.TextTransparency = 0
@@ -978,7 +978,7 @@ function MacLib:Window(Settings)
 	local globalSettings = Instance.new("Frame")
 	globalSettings.Name = "GlobalSettings"
 	globalSettings.AutomaticSize = Enum.AutomaticSize.XY
-	globalSettings.BackgroundColor3 = Color3.fromRGB(12, 14, 24)
+	globalSettings.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
 	globalSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	globalSettings.BorderSizePixel = 0
 	globalSettings.Position = UDim2.fromScale(0.298, 0.104)
@@ -3212,7 +3212,7 @@ function MacLib:Window(Settings)
 					prompt.Name = "Prompt"
 					prompt.AnchorPoint = Vector2.new(0.5, 0.5)
 					prompt.AutomaticSize = Enum.AutomaticSize.Y
-					prompt.BackgroundColor3 = Color3.fromRGB(12, 14, 24)
+					prompt.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
 					prompt.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					prompt.BorderSizePixel = 0
 					prompt.Position = UDim2.fromScale(0.5, 0.5)
@@ -4871,7 +4871,7 @@ function MacLib:Window(Settings)
 		notification.Name = "Notification"
 		notification.AnchorPoint = Vector2.new(0.5, 0.5)
 		notification.AutomaticSize = Enum.AutomaticSize.Y
-		notification.BackgroundColor3 = Color3.fromRGB(12, 14, 24)
+		notification.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
 		notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		notification.BorderSizePixel = 0
 		notification.Position = UDim2.fromScale(0.5, 0.5)
@@ -5106,7 +5106,7 @@ function MacLib:Window(Settings)
 		prompt.Name = "Prompt"
 		prompt.AnchorPoint = Vector2.new(0.5, 0.5)
 		prompt.AutomaticSize = Enum.AutomaticSize.Y
-		prompt.BackgroundColor3 = Color3.fromRGB(12, 14, 24)
+		prompt.BackgroundColor3 = Color3.fromRGB(5, 5, 10)
 		prompt.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		prompt.BorderSizePixel = 0
 		prompt.Position = UDim2.fromScale(0.5, 0.5)
